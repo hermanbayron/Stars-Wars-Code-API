@@ -132,7 +132,7 @@ def create_planets_favoritos(user_id):
 
     if query_planets_favoritos is None:
         #guardar datos recibidos a la tabla planets_favoritos
-        new_planets_favoritos = Favoritos(user_id=body["user_id"],planets_id=body["planets"],people_id=body["people"])
+        new_planets_favoritos = Favoritos(user_id=body["user_id"],planets_id=body["planets_id"],people_id=body["people_id"])
         db.session.add(new_planets_favoritos)
         db.session.commit()
         response_body = {
@@ -156,7 +156,7 @@ def create_people_favoritos(user_id):
 
     if query_people_favoritos is None:
         #guardar datos recibidos a la tabla people_favoritos
-        new_people_favoritos = Favoritos(user_id=body["user_id"],planets_id=body["planets"],people_id=body["people"])
+        new_people_favoritos = Favoritos(user_id=body["user_id"],planets_id=body["planets_id"],people_id=body["people_id"])
         db.session.add(new_people_favoritos)
         db.session.commit()
         response_body = {
